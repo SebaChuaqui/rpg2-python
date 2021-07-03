@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LA BATALLA DE LOS NINJAS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    
+</head>
+
+<body>
+    <div class="row centro cabecera">
+        <h1>Escenario  de Batalla</h1>
+    </div>
+    <p></p>
+    <div class="row centro">    
+
+        <div class="cuadros">
+            {% for carta1 in cartas1 %}
+            <h5>Nombre: {{ carta1.nombre }} / Costo: {{ carta1.costo }}</h5>
+            <img src="images/ninja_rojo.jpg" width=300 height=165 alt="ninja rojo">
+            <p> Poder: {{ carta1.poder }} </p>
+            <p>Resistencia: {{ carta1.resistencia }}</p>
+            {% endfor %}       
+        </div>
+        
+        <div class="cuadros">
+            {% for carta2 in cartas2 %}
+            <h5>Nombre: {{ carta2.nombre }} / Costo: {{ carta2.costo }}</h5>
+            <img src="images/ninja_negro.jpg" width=300 height=165 alt="ninja negro">
+            <p> Poder: {{ carta2.poder }} </p>
+            <p>Resistencia: {{ carta2.resistencia }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>
